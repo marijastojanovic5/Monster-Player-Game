@@ -1,6 +1,7 @@
 /*jshint esversion: 6 */
 const ATTACK_VALUE = 10;
 const MONSTER_ATTACK_VALUE=14;
+const STRONG_ATTACK_VALUE=17;
 let chosenMaxLife = 100 ;
 let currentMonsterHealth = chosenMaxLife;
 let currentPlayerHealth = chosenMaxLife;
@@ -24,7 +25,7 @@ function attackHandler(){
 
 }
 function strongAttackHandler(){
-  const damage= dealMonsterDamage(ATTACK_VALUE);
+  const damage= dealMonsterDamage(STRONG_ATTACK_VALUE);
   currentMonsterHealth -=damage;
   const playerDamage=dealPlayerDamage(MONSTER_ATTACK_VALUE);
   currentPlayerHealth -=playerDamage;
@@ -40,3 +41,4 @@ function strongAttackHandler(){
 }
 
 attackBtn.addEventListener("click",attackHandler);
+strongAttackBtn.addEventListener("click",strongAttackHandler);
